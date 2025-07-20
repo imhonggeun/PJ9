@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<H1>전체 리스트</H1>
+	<a href="/">전체 리스트</a> <br>
+	<a href="/pj9add">글추가</a> <br>
+	<a href="/?accept=1">승인</a> <br>
+	<a href="/?accept=0">미승인</a> <br>
+	
+	<table>
+		<tr th:each = " html : ${reuslt}">
+			<td>
+				<a th:href="@{/pj9detail(no=${html.no})}" th:text= "${html.title}" ></a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
